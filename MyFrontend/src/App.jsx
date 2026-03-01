@@ -1,27 +1,22 @@
-import { useEffect, useState } from "react";
+import Home from "./Home.jsx";
+import Signup from "./Signup.jsx";
 
-function App() {
-  const [tasks, setTasks] = useState([]);
-
-  useEffect(() => {
-    fetch("http://localhost:5217/api/tasks")
-      .then(res => res.json())
-      .then(data => setTasks(data))
-      .catch(err => console.error(err));
-  }, []);
+export default function App() {
+  const path = window.location.pathname;
 
   return (
-    <div style={{ padding: "2rem" }}>
-      <h1>Tasks</h1>
-      <ul>
-        {tasks.map(t => (
-          <li key={t.id}>
-            {t.title} — {t.isCompleted ? "Completed" : "Pending"}
-          </li>
-        ))}
-      </ul>
+    <div style={{ padding: 30 }}>
+
+      <nav style={{ marginBottom: 20 }}>
+        <a href="/" style={{ marginRight: 10 }}>Home</a>
+        <a href="/signup">Sign Up</a>
+      </nav>
+
+      {path === "/signup" || path === "/signup/"
+        ? <Signup />
+        : <Home />
+      }
+
     </div>
   );
 }
-
-export default App;
