@@ -26,3 +26,4 @@ C:\Users\bryce\MyWebApp\MyBackend\obj\Debug\net10.0\refint\MyBackend.dll
 C:\Users\bryce\MyWebApp\MyBackend\obj\Debug\net10.0\MyBackend.pdb
 C:\Users\bryce\MyWebApp\MyBackend\obj\Debug\net10.0\MyBackend.genruntimeconfig.cache
 C:\Users\bryce\MyWebApp\MyBackend\obj\Debug\net10.0\ref\MyBackend.dll
+C:\Users\bryce\MyWebApp\MyBackend\obj\Debug\net10.0\MyBackend.sourcelink.json

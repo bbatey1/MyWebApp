@@ -4,7 +4,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowReactApp", policy =>
-        policy.WithOrigins("http://localhost:5173", "http://localhost:5174")
+        policy.WithOrigins("http://localhost:5173")
               .AllowAnyMethod()
               .AllowAnyHeader()
     );
@@ -29,6 +29,14 @@ app.MapPost("/api/tasks", (TodoItem newItem) =>
     return Results.Created($"/api/tasks/{newItem.Id}", newItem);
 });
 
+app.MapPost("/api/signup", (User user) =>
+{
+    Console.WriteLine($"User created: {user.Name}, {user.Email}");
+
+    return Results.Ok(user);
+});
+
 app.Run();
 
 record TodoItem(int Id, string Title, bool IsCompleted);
+record User(string Name, string Email, string Password);
